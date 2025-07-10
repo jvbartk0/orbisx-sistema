@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: orbisx-backend
+    env: python
+    buildCommand: |
+      cd backend &&
+      pip install -r requirements.txt
+    startCommand: cd backend && python src/main.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 5000
